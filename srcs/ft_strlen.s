@@ -15,8 +15,6 @@ global _ft_strlen
 section .text
 _ft_strlen:
 			xor		rax, rax			; i = 0
-			cmp		rdi, 0
-			je		exit
 			jmp	count
 
 count:

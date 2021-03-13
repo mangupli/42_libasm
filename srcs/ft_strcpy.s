@@ -16,10 +16,6 @@ section .text
 _ft_strcpy:
 	push rdx		; for char c
 	push rcx		; i
-	cmp	rsi, 0
-	jz is_null
-	cmp rdi, 0
-	jz is_null
 	xor	rcx, rcx    ; i == 0
 	jmp	copy
 
@@ -29,13 +25,7 @@ copy:
 	cmp byte [rsi + rcx], 0	; src[i] == ?
 	je exit
 	inc	rcx					; i++
-	jmp	copy				
-
-is_null:
-	xor rax, rax
-	pop	rdx
-	pop rcx
-	ret
+	jmp	copy
 
 exit:
 	mov	rax, rdi

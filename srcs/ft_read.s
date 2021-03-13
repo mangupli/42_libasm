@@ -13,7 +13,7 @@
 global _ft_read
 extern ___error
 
-section.text
+section .text
 ; ft_read(rdi, rsi, rdx)
 _ft_read:
 	mov rax, 0x2000003  ;call write

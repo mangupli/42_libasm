@@ -52,11 +52,15 @@ tortor, sit amet consequat amet.";
 	printf("%-20s: %zu\n", "libc", strlen(your_choice));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(your_choice));
 	printf("\n");
+
+	/*
+	//NULL Segfault
 	printf("%-20s: \"%s\"\n", "char *", NULL);
 	printf("%-20s: 0\n", "expected lenght");
-	//printf("%-20s: %zu\n", "libc", strlen(NULL)); //segfault
+	printf("%-20s: %zu\n", "libc", strlen(NULL));
 	printf("%-20s: %zu\n", "libasm", ft_strlen(NULL));
 	printf("\n");
+	*/
 }
 
 void	test_ft_read()
@@ -156,21 +160,25 @@ void	test_ft_strcmp()
 	printf("%-20s: %d\n", "libc", strcmp(your_choice, your_choice));
 	printf("%-20s: %d\n", "libasm", ft_strcmp(your_choice, your_choice));
 	printf("\n");
+
+	/*
+	//NULL Segfault
 	printf("%-20s: \"%s\"\n", "1 char *", NULL);
 	printf("%-20s: \"%s\"\n", "2 char *", your_choice);
-	//printf("%-20s: %d\n", "libc", strcmp(NULL, your_choice)); //segfault
+	printf("%-20s: %d\n", "libc", strcmp(NULL, your_choice));
 	printf("%-20s: %d\n", "libasm", ft_strcmp(NULL, your_choice));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "1 char *", your_choice);
 	printf("%-20s: \"%s\"\n", "2 char *", NULL);
-	//printf("%-20s: %d\n", "libc", strcmp(your_choice, NULL)); //segfault
+	printf("%-20s: %d\n", "libc", strcmp(your_choice, NULL));
 	printf("%-20s: %d\n", "libasm", ft_strcmp(your_choice, NULL));
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "1 char *", NULL);
 	printf("%-20s: \"%s\"\n", "2 char *", NULL);
-	//printf("%-20s: %d\n", "libc", strcmp(NULL, NULL)); //segfault
+	printf("%-20s: %d\n", "libc", strcmp(NULL, NULL));
 	printf("%-20s: %d\n", "libasm", ft_strcmp(NULL, NULL));
 	printf("\n");
+	*/
 }
 
 void	test_ft_write()
@@ -232,19 +240,23 @@ tortor, sit amet consequat amet.";
 	clear_buffer(buffer, 1000);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, long_str));
 	clear_buffer(buffer, 1000);
-	printf("\n");	
+	printf("\n");
+
+	/*
+	//NULL Segfault
 	printf("%-20s: \"%s\"\n", "char []", NULL);
 	printf("%-20s: buffer[1000]\n", "copy to");
-	//printf("%-20s: \"%s\"\n", "libc", strcpy(buffer,NULL)); //segfault	
+	printf("%-20s: \"%s\"\n", "libc", strcpy(buffer,NULL));
 	clear_buffer(buffer, 1000);
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(buffer, NULL));
 	clear_buffer(buffer, 1000);
 	printf("\n");	
 	printf("%-20s: \"%s\"\n", "char []", hello_world);
 	printf("%-20s: %s\n", "copy to", NULL);
-	//printf("%-20s: \"%s\"\n", "libc", strcpy(NULL, hello_world));	//segfault
+	printf("%-20s: \"%s\"\n", "libc", strcpy(NULL, hello_world));
 	printf("%-20s: \"%s\"\n", "libasm", ft_strcpy(NULL, hello_world));
-	printf("\n");	
+	printf("\n");
+	*/
 }
 
 void	test_ft_strdup()
@@ -292,15 +304,19 @@ tortor, sit amet consequat amet.";
 	save2 = ft_strdup(long_str);
 	printf("%-20s: \"%s\"\n", "libasm", save2);
 	free(save2);
+
+	/*
+	//NULL Segfault
 	save2 = NULL;
 	printf("\n");
 	printf("\n");
 	printf("%-20s: \"%s\"\n", "char *", NULL);
-//	save1 = strdup(NULL); //segfault
+	save1 = strdup(NULL);
 	save2 = ft_strdup(NULL);
 	printf("%-20s: \"%s\"\n", "libasm", save2);
 	free(save2);
 	save2 = NULL;
+	*/
 }
 
 int		main(int argc, char **argv)

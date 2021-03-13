@@ -13,7 +13,7 @@
 global _ft_write
 extern ___error
 
-section.text
+section .text
 ; ft_write(rdi, rsi, rdx)
 _ft_write:
 	mov rax, 0x2000004

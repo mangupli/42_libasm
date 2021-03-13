@@ -65,7 +65,7 @@ EXEC		=	test
 
 ${NAME}:		${OBJS}
 	@echo "$(_GREEN) All files compiled. $(_END)✅"
-	ar rcs ${NAME} ${OBJS}
+	ar rcs ${NAME} $?
 	ranlib ${NAME}
 	@echo "$(_GREEN) Library '$(NAME)' compiled. $(_END)✅"
 

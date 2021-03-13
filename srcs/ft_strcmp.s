@@ -14,10 +14,6 @@ global	_ft_strcmp
 
 segment	.text
 _ft_strcmp:
-	cmp	rdi, 0
-	jz	is_null
-	cmp rsi, 0
-	jz	is_null
 	jmp		compare
 
 compare:
@@ -35,22 +31,4 @@ compare:
 	
 exit:
 	sub rax, rbx; rax = *str1 - *str2
-	ret
-
-is_null:
-	cmp	rdi, rsi
-	jz	equal
-	jg	greater
-	jmp lesser
-
-equal:
-	xor rax, rax
-	ret
-
-greater:
-	mov	rax, 1
-	ret
-
-lesser:
-	mov	rax, -1
 	ret
